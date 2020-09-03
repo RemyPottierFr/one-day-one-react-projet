@@ -1,0 +1,17 @@
+.fromRight {
+  animation: fromRight 0.25s;
+}
+.toRight {
+  animation: fromRight 0.25s reverse;
+}
+
+@keyframes fromRight {
+  from {
+    margin-left: 50%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
