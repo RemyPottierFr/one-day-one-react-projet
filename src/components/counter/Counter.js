@@ -1,0 +1,42 @@
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, inputStep } from "../../actions";
+
+function Counter() {
+  const dispatch = useDispatch();
+  const { counter } = useSelector((state) => state);
+  const [inputIncrement, setInputIncrement] = useState(1);
+  return (
+    <div className="App">
+      <h1 className="text-6xl text-blue-500">{counter}</h1>
+      <div className="my-2">
+        <button className="button" onClick={() => dispatch(increment())}>
+          +
+        </button>
+
+        <button className="button" onClick={() => dispatch(decrement())}>
+          -
+        </button>
+      </div>
+      <form
+        className="my-2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(inputStep(inputIncrement));
+        }}
+      >
+        <input
+          className="input"
+          value={inputIncrement}
+          onChange={(e) => setInputIncrement(+e.target.value)}
+          type="number"
+        />
+        <button className="button" type="submit">
+          Add more
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default Counter;

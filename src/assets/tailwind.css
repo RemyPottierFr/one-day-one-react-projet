@@ -1,0 +1,64 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.button {
+  @apply bg-blue-500;
+  @apply transition-all;
+  @apply duration-200;
+  @apply rounded;
+  @apply px-3;
+  @apply py-1;
+  @apply text-xl;
+  @apply text-white;
+  @apply mx-2;
+  @apply font-hairline;
+}
+
+.button:hover {
+  @apply bg-blue-400;
+}
+
+.button:focus {
+  @apply outline-none;
+}
+
+.input {
+  @apply px-4;
+  @apply py-2;
+  @apply bg-transparent;
+  @apply border-2;
+  @apply border-blue-500;
+  @apply rounded;
+  @apply max-w-20;
+  @apply text-white;
+  @apply text-lg;
+  @apply outline-none;
+}
+
+.spin {
+  animation: spin 0.5s ease-in-out;
+}
+.full-spin {
+  animation: full-spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes full-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
