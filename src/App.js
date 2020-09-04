@@ -18,7 +18,7 @@ function App() {
             <h1 className="text-5xl text-blue-500 text-center">
               Welcome to learn-redux project
             </h1>
-            <div className="grid grid-cols-4 col-gap-4 row-gap-4 my-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 col-gap-2 row-gap-4 my-8">
               <LinkButton to="/counter" className="panel">
                 <span>Counter</span>
               </LinkButton>
@@ -30,6 +30,9 @@ function App() {
               </LinkButton>
               <LinkButton to="/altermap" className="panel">
                 <span>Altermap</span>
+              </LinkButton>
+              <LinkButton to="/" className="panel">
+                <span>?</span>
               </LinkButton>
             </div>
           </div>
