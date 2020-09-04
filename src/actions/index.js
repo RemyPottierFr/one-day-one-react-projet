@@ -1,3 +1,7 @@
+import * as ajaxActions from "./ajaxActions";
+
+export { ajaxActions };
+
 export const increment = () => ({
   type: "INCREMENT",
 });

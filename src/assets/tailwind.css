@@ -38,11 +38,29 @@
   @apply outline-none;
 }
 
+.panel {
+  @apply w-full;
+  @apply pt-full;
+  @apply mx-auto;
+  @apply relative;
+}
+
+.panel > span {
+  @apply absolute;
+  @apply transform;
+  @apply top-1/2;
+  @apply left-1/2;
+  @apply -translate-x-1/2;
+  @apply -translate-y-1/2;
+  @apply text-3xl;
+  @apply w-full;
+}
+
 .spin {
-  animation: spin 0.5s ease-in-out;
+  animation: spin 0.2s ease-in-out forwards;
 }
 .full-spin {
-  animation: full-spin 0.5s ease-in-out;
+  animation: full-spin 0.2s ease-in-out forwards;
 }
 
 @keyframes spin {
@@ -50,7 +68,7 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -59,6 +77,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
   }
 }
