@@ -4,8 +4,10 @@ import "./App.css";
 import Counter from "./components/counter";
 import TodoList from "./components/todo-list";
 import AjaxList from "./components/ajax-list";
+import Altermap from "./components/altermap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
+import { LinkButton } from "./components/shared";
 
 function App() {
   return (
@@ -17,56 +19,48 @@ function App() {
               Welcome to learn-redux project
             </h1>
             <div className="grid grid-cols-4 col-gap-4 row-gap-4 my-8">
-              <button
-                className="button panel"
-                onClick={() => (window.location = "/counter")}
-              >
+              <LinkButton to="/counter" className="panel">
                 <span>Counter</span>
-              </button>
-              <button
-                className="button panel"
-                onClick={() => (window.location = "/todo")}
-              >
+              </LinkButton>
+              <LinkButton to="/todo" className="panel">
                 <span>Todo List</span>
-              </button>
-              <button
-                className="button panel"
-                onClick={() => (window.location = "/ajax")}
-              >
+              </LinkButton>
+              <LinkButton to="/ajax" className="panel">
                 <span>Ajax</span>
-              </button>
+              </LinkButton>
+              <LinkButton to="/altermap" className="panel">
+                <span>Altermap</span>
+              </LinkButton>
             </div>
           </div>
         </Route>
         <Route path="/counter">
-          <button
-            className="button absolute left-4 top-4"
-            onClick={() => (window.location = "/")}
-          >
+          <LinkButton to="/" className="absolute left-4 top-4">
             <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
             Go to home
-          </button>
+          </LinkButton>
           <Counter />
         </Route>
         <Route path="/todo">
-          <button
-            className="button absolute left-4 top-4"
-            onClick={() => (window.location = "/")}
-          >
+          <LinkButton to="/" className="absolute left-4 top-4">
             <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
             Go to home
-          </button>
+          </LinkButton>
           <TodoList />
         </Route>
         <Route path="/ajax">
-          <button
-            className="button absolute left-4 top-4"
-            onClick={() => (window.location = "/")}
-          >
+          <LinkButton to="/" className="absolute left-4 top-4">
             <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
             Go to home
-          </button>
+          </LinkButton>
           <AjaxList />
+        </Route>
+        <Route path="/altermap">
+          <LinkButton to="/" className="absolute left-4 top-4 z-1">
+            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+            Go to home
+          </LinkButton>
+          <Altermap />
         </Route>
       </Switch>
     </Router>

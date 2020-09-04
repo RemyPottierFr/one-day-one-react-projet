@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, inputStep } from "../../actions";
+import { counterActions } from "../../actions";
 
 function Counter() {
   const dispatch = useDispatch();
@@ -10,11 +10,17 @@ function Counter() {
     <div className="App">
       <h1 className="text-6xl text-blue-500">{counter}</h1>
       <div className="my-2">
-        <button className="button" onClick={() => dispatch(increment())}>
+        <button
+          className="button"
+          onClick={() => dispatch(counterActions.increment())}
+        >
           +
         </button>
 
-        <button className="button" onClick={() => dispatch(decrement())}>
+        <button
+          className="button"
+          onClick={() => dispatch(counterActions.decrement())}
+        >
           -
         </button>
       </div>
@@ -22,7 +28,7 @@ function Counter() {
         className="my-2"
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch(inputStep(inputIncrement));
+          dispatch(counterActions.inputStep(inputIncrement));
         }}
       >
         <input

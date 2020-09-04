@@ -38,7 +38,7 @@ export default function AjaxList() {
       </div>
       <div className="grid row-gap-4 grid-cols-1 px-4 py-8">
         {ajaxList.map((character) => {
-          return <AjaxItem character={character} />;
+          return <AjaxItem character={character} key={character.id} />;
         })}
       </div>
     </div>

@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  toggleVisibilityTodo,
-  deleteTodo,
-  updateTodoMessage,
-  undoDeleteTodo,
-} from "../../actions";
+import { todoActions } from "../../actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -21,12 +16,12 @@ function Todo({ id, show, message, deleted }) {
   let [verifyUndo, setVerifyUndo] = useState(false);
 
   const changeTodoVisibility = (id) => {
-    dispatch(toggleVisibilityTodo(id));
+    dispatch(todoActions.toggleVisibilityTodo(id));
   };
 
   const removeTodo = (id) => {
     if (verifyDelete) {
-      dispatch(deleteTodo(id));
+      dispatch(todoActions.deleteTodo(id));
     } else {
       setVerifyDelete((x) => (x = !x));
     }
@@ -35,7 +30,7 @@ function Todo({ id, show, message, deleted }) {
   const undoRemoveTodo = (id) => {
     if (verifyUndo) {
       console.log("delete");
-      dispatch(undoDeleteTodo(id));
+      dispatch(todoActions.undoDeleteTodo(id));
     } else {
       setVerifyUndo((x) => (x = !x));
     }
@@ -43,8 +38,8 @@ function Todo({ id, show, message, deleted }) {
 
   const updateMessage = (id, value) => {
     if (value !== message) {
-      dispatch(updateTodoMessage({ id, message: value }));
-      !show && dispatch(toggleVisibilityTodo(id));
+      dispatch(todoActions.updateTodoMessage({ id, message: value }));
+      !show && dispatch(todoActions.toggleVisibilityTodo(id));
     }
   };
 

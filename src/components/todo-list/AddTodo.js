@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../actions";
+import { todoActions } from "../../actions";
 
 function AddTodo() {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function AddTodo() {
         ...todo,
         id: (todo.id += 1),
       });
-      dispatch(addTodo({ ...todo, message: todo.message.trim() }));
+      dispatch(todoActions.addTodo({ ...todo, message: todo.message.trim() }));
       setTodo({
         ...todo,
         message: "",
