@@ -3,6 +3,7 @@ import loggedReducer from "./isLogged";
 import todoList from "./todoList";
 import ajaxList from "./ajax";
 import errors from "./error";
+import rickMarketCart from "./rick-market-cart";
 import { combineReducers } from "redux";
 
 const reducers = combineReducers({
@@ -11,6 +12,7 @@ const reducers = combineReducers({
   todoList,
   ajaxList,
   errors,
+  rickMarketCart,
 });
 
 export default reducers;

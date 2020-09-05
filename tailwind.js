@@ -13,6 +13,12 @@ module.exports = {
         "-2": "-2",
         "-3": "-3",
       },
+      boxShadow: {
+        "inner-md": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)",
+        "inner-lg": "inset 0 2.5px 5px 0 rgba(0, 0, 0, 0.15)",
+        "inner-xl": "inset 0 3px 6px 0 rgba(0, 0, 0, 0.2)",
+        "inner-2xl": "inset 0 6px 12px 0 rgba(0, 0, 0, 0.4)",
+      },
       fontFamily: {
         angelica: "white_angelicaregular",
         amiri: "Amiri",

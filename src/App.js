@@ -5,6 +5,11 @@ import Counter from "./components/counter";
 import TodoList from "./components/todo-list";
 import AjaxList from "./components/ajax-list";
 import Altermap from "./components/altermap";
+import RickMarket, {
+  RickMarketCart,
+  RickMarketHeader,
+  RickMarketFooter,
+} from "./components/rick-market";
 import UnknownRoute from "./components/unknown-route";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -34,6 +39,9 @@ function App() {
               </LinkButton>
               <LinkButton to="/unknown" className="panel">
                 <span>?</span>
+              </LinkButton>
+              <LinkButton to="/rick-market/home" className="panel">
+                <span>Rick Market</span>
               </LinkButton>
             </div>
           </div>
@@ -65,6 +73,16 @@ function App() {
             Go to home
           </LinkButton>
           <Altermap />
+        </Route>
+        <Route path="/rick-market">
+          <Route path="/rick-market" exact>
+            <RickMarket />
+          </Route>
+          <Route path="/rick-market/cart">
+            <RickMarketHeader />
+            <RickMarketCart />
+            <RickMarketFooter />
+          </Route>
         </Route>
         <Route>
           <UnknownRoute />
