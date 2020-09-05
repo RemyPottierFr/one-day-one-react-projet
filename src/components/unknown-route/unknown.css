@@ -1,0 +1,15 @@
+.random-character:hover::before {
+  content: "🔄";
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 2.5rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}

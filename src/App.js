@@ -5,6 +5,7 @@ import Counter from "./components/counter";
 import TodoList from "./components/todo-list";
 import AjaxList from "./components/ajax-list";
 import Altermap from "./components/altermap";
+import UnknownRoute from "./components/unknown-route";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
@@ -31,7 +32,7 @@ function App() {
               <LinkButton to="/altermap" className="panel">
                 <span>Altermap</span>
               </LinkButton>
-              <LinkButton to="/" className="panel">
+              <LinkButton to="/unknown" className="panel">
                 <span>?</span>
               </LinkButton>
             </div>
@@ -64,6 +65,9 @@ function App() {
             Go to home
           </LinkButton>
           <Altermap />
+        </Route>
+        <Route>
+          <UnknownRoute />
         </Route>
       </Switch>
     </Router>

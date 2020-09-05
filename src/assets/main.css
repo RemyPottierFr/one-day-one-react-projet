@@ -21953,6 +21953,22 @@ video {
   animation: full-spin 0.2s ease-in-out forwards;
 }
 
+.barrel-roll {
+  animation: barrel-roll 0.9s forwards;
+}
+
+@keyframes barrel-roll {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(720deg);
+    opacity: 1;
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
