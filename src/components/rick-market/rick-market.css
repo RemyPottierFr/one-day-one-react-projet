@@ -1,0 +1,22 @@
+.button-cart:focus::after {
+  content: "Add 1";
+  position: absolute;
+  right: -55%;
+  top: 50%;
+  color: lightblue;
+  animation: addCart 1s forwards;
+}
+.button-cart {
+  position: relative;
+}
+
+@keyframes addCart {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: -50%;
+    opacity: 0;
+  }
+}

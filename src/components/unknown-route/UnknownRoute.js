@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useCallback } from "react";
 import { ajaxActions } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./unknown.css";
@@ -9,13 +9,9 @@ function UnknownRoute() {
   const { ajaxList } = useSelector((state) => state);
   let [roll, setRoll] = useState(false);
 
-  const findRandomCharacter = async () => {
+  const findRandomCharacter = useCallback(() => {
     dispatch(ajaxActions.queryRandomCharacter());
-  };
-
-  useEffect(() => {
-    findRandomCharacter();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="flex flex-col justify-center items-center">
