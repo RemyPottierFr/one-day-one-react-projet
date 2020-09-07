@@ -56,6 +56,30 @@
   @apply w-full;
 }
 
+.undone {
+  @apply bg-red-400;
+}
+.undone:hover {
+  @apply bg-red-300;
+}
+
+.undone:after {
+  content: "❌";
+  @apply absolute;
+  @apply left-1/2;
+  @apply bottom-4;
+  @apply transform;
+  @apply -translate-x-1/2;
+}
+.done:after {
+  content: "✅";
+  @apply absolute;
+  @apply left-1/2;
+  @apply bottom-4;
+  @apply transform;
+  @apply -translate-x-1/2;
+}
+
 .spin {
   animation: spin 0.2s ease-in-out forwards;
 }

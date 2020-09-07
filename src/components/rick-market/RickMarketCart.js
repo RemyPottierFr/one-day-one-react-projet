@@ -30,14 +30,16 @@ function RickMarketCart() {
           )}
         </div>
         {rickMarketCart.length > 0 && (
-          <button className="button my-4">
-            For a total of{" "}
-            {rickMarketCart.reduce(
-              (acc, value) => (acc += value.quantity * value.price),
-              0
-            )}
-            $
-          </button>
+          <Link to="/rick-market/payement">
+            <button className="button my-4">
+              For a total of{" "}
+              {rickMarketCart.reduce(
+                (acc, value) => (acc += value.quantity * value.price),
+                0
+              )}
+              $
+            </button>
+          </Link>
         )}
       </div>
     </section>

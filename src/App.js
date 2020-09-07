@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import Counter from "./components/counter";
 import TodoList from "./components/todo-list";
@@ -9,13 +14,19 @@ import RickMarket, {
   RickMarketCart,
   RickMarketHeader,
   RickMarketFooter,
+  RickMarketPayement,
 } from "./components/rick-market";
 import UnknownRoute from "./components/unknown-route";
+import Wip from "./components/wip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 function App() {
+  const stripePromise = loadStripe("pk_test_jwRNsKDqgZ8eFZiFYQdHzCJn");
+
   return (
     <Router>
       <Switch>
@@ -24,24 +35,33 @@ function App() {
             <h1 className="text-5xl text-blue-500 text-center">
               Welcome to learn-redux project
             </h1>
-            <div className="grid grid-cols-2 md:grid-cols-4 col-gap-2 row-gap-4 my-8">
-              <LinkButton to="/counter" className="panel">
+            <div className="grid grid-cols-2 md:grid-cols-4 col-gap-4 row-gap-4 my-8">
+              <LinkButton to="/counter" className="panel done">
                 <span>Counter</span>
               </LinkButton>
-              <LinkButton to="/todo" className="panel">
+              <LinkButton to="/todo" className="panel done">
                 <span>Todo List</span>
               </LinkButton>
-              <LinkButton to="/ajax" className="panel">
+              <LinkButton to="/ajax" className="panel done">
                 <span>Ajax</span>
               </LinkButton>
-              <LinkButton to="/altermap" className="panel">
+              <LinkButton to="/altermap" className="panel done">
                 <span>Altermap</span>
               </LinkButton>
-              <LinkButton to="/unknown" className="panel">
+              <LinkButton to="/unknown" className="panel done">
                 <span>?</span>
               </LinkButton>
-              <LinkButton to="/rick-market" className="panel">
+              <LinkButton to="/rick-market" className="panel done">
                 <span>Rick Market</span>
+              </LinkButton>
+              <LinkButton to="/wip" className="panel done">
+                <span>Work In Progress</span>
+              </LinkButton>
+              <LinkButton to="/calculator" className="panel undone">
+                <span>Calculator</span>
+              </LinkButton>
+              <LinkButton to="/weather" className="panel undone">
+                <span>Weather App</span>
               </LinkButton>
             </div>
           </div>
@@ -83,6 +103,22 @@ function App() {
             <RickMarketCart />
             <RickMarketFooter />
           </Route>
+          <Route path="/rick-market/payement">
+            <RickMarketHeader />
+            <Elements stripe={stripePromise}>
+              <RickMarketPayement />
+            </Elements>
+            <RickMarketFooter />
+          </Route>
+        </Route>
+        <Route path="/calculator">
+          <Wip />
+        </Route>
+        <Route path="/weather">
+          <Wip />
+        </Route>
+        <Route path="/wip">
+          <Wip />
         </Route>
         <Route>
           <UnknownRoute />
