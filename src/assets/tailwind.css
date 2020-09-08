@@ -62,6 +62,12 @@
 .undone:hover {
   @apply bg-red-300;
 }
+.wip {
+  @apply bg-yellow-500;
+}
+.wip:hover {
+  @apply bg-yellow-300;
+}
 
 .undone:after {
   content: "❌";
@@ -73,6 +79,14 @@
 }
 .done:after {
   content: "✅";
+  @apply absolute;
+  @apply left-1/2;
+  @apply bottom-4;
+  @apply transform;
+  @apply -translate-x-1/2;
+}
+.wip:after {
+  content: "🚧";
   @apply absolute;
   @apply left-1/2;
   @apply bottom-4;

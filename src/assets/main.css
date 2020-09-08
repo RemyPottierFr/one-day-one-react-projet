@@ -22005,6 +22005,18 @@ video {
   background-color: rgba(254, 178, 178, var(--bg-opacity));
 }
 
+.wip {
+  --bg-opacity: 1;
+  background-color: #ecc94b;
+  background-color: rgba(236, 201, 75, var(--bg-opacity));
+}
+
+.wip:hover {
+  --bg-opacity: 1;
+  background-color: #faf089;
+  background-color: rgba(250, 240, 137, var(--bg-opacity));
+}
+
 .undone:after {
   content: "❌";
   position: absolute;
@@ -22023,6 +22035,22 @@ video {
 
 .done:after {
   content: "✅";
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  --transform-translate-x: 0;
+  --transform-translate-y: 0;
+  --transform-rotate: 0;
+  --transform-skew-x: 0;
+  --transform-skew-y: 0;
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  --transform-translate-x: -50%;
+}
+
+.wip:after {
+  content: "🚧";
   position: absolute;
   left: 50%;
   bottom: 1rem;

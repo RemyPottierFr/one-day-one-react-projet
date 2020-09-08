@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Counter from "./components/counter";
 import TodoList from "./components/todo-list";
@@ -18,6 +13,7 @@ import RickMarket, {
 } from "./components/rick-market";
 import UnknownRoute from "./components/unknown-route";
 import Wip from "./components/wip";
+import NetlifyDeployment from "./components/netlify-deployement";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
@@ -56,6 +52,9 @@ function App() {
               </LinkButton>
               <LinkButton to="/wip" className="panel done">
                 <span>Work In Progress</span>
+              </LinkButton>
+              <LinkButton to="/netlify-deployement" className="panel wip">
+                <span>Netlify deployement</span>
               </LinkButton>
               <LinkButton to="/calculator" className="panel undone">
                 <span>Calculator</span>
@@ -119,6 +118,9 @@ function App() {
         </Route>
         <Route path="/wip">
           <Wip />
+        </Route>
+        <Route path="/netlify-deployement">
+          <NetlifyDeployment />
         </Route>
         <Route>
           <UnknownRoute />
