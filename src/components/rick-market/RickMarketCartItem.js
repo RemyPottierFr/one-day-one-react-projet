@@ -39,14 +39,14 @@ function RickMarketCartItem({ item }) {
         <div>
           <span className="text-blue-500">Quantity :</span>
           <button
-            className="px-2 py-1 text-lg text-blue-700 rounded-full shadow-inner-lg hover:shadow-lg mx-2"
+            className="focus:outline-none px-2 py-1 text-lg text-blue-700 rounded-full shadow-inner-lg hover:shadow-lg mx-2"
             onClick={() => updateQte(item.id, "-", item.quantity)}
           >
             <FontAwesomeIcon icon={faMinus} />
           </button>
           <span className="text-xl text-blue-500">{item.quantity}</span>
           <button
-            className="px-2 py-1 text-lg text-blue-700 rounded-full shadow-inner-lg hover:shadow-lg mx-2"
+            className="focus:outline-none px-2 py-1 text-lg text-blue-700 rounded-full shadow-inner-lg hover:shadow-lg mx-2"
             onClick={() => updateQte(item.id, "+", item.quantity)}
           >
             <FontAwesomeIcon icon={faPlus} />

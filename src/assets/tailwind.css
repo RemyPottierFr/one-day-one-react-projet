@@ -134,3 +134,40 @@
     transform: rotate(180deg);
   }
 }
+
+.list-item-done,
+.list-item-wip,
+.list-item-undone {
+  @apply relative;
+}
+
+.list-item-done:before {
+  content: "✅";
+  @apply mr-2;
+}
+
+.list-item-wip:before {
+  content: "🚧";
+  @apply mr-2;
+  @apply h-full;
+}
+
+.list-item-undone:before {
+  content: "❌";
+  @apply mr-2;
+}
+
+.fade-bottom {
+  animation: fadeBottom 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeBottom {
+  from {
+    bottom: -50%;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}

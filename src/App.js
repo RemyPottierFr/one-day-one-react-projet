@@ -9,7 +9,6 @@ import RickMarket, {
   RickMarketCart,
   RickMarketHeader,
   RickMarketFooter,
-  RickMarketPayement,
 } from "./components/rick-market";
 import UnknownRoute from "./components/unknown-route";
 import Wip from "./components/wip";
@@ -17,12 +16,8 @@ import NetlifyDeployment from "./components/netlify-deployement";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
 
 function App() {
-  const stripePromise = loadStripe("pk_test_jwRNsKDqgZ8eFZiFYQdHzCJn");
-
   return (
     <Router>
       <Switch>
@@ -53,7 +48,7 @@ function App() {
               <LinkButton to="/wip" className="panel done">
                 <span>Work In Progress</span>
               </LinkButton>
-              <LinkButton to="/netlify-deployement" className="panel wip">
+              <LinkButton to="/wip" className="panel wip">
                 <span>Netlify deployement</span>
               </LinkButton>
               <LinkButton to="/calculator" className="panel undone">
@@ -102,13 +97,6 @@ function App() {
             <RickMarketCart />
             <RickMarketFooter />
           </Route>
-          <Route path="/rick-market/payement">
-            <RickMarketHeader />
-            <Elements stripe={stripePromise}>
-              <RickMarketPayement />
-            </Elements>
-            <RickMarketFooter />
-          </Route>
         </Route>
         <Route path="/calculator">
           <Wip />
@@ -120,6 +108,10 @@ function App() {
           <Wip />
         </Route>
         <Route path="/netlify-deployement">
+          <LinkButton to="/" className="absolute left-4 top-4">
+            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+            Go to home
+          </LinkButton>
           <NetlifyDeployment />
         </Route>
         <Route>
