@@ -56,10 +56,10 @@
   @apply w-full;
 }
 
-.undone {
+.not-done {
   @apply bg-red-400;
 }
-.undone:hover {
+.not-done:hover {
   @apply bg-red-300;
 }
 .wip {
@@ -69,7 +69,7 @@
   @apply bg-yellow-300;
 }
 
-.undone:after {
+.not-done:after {
   content: "❌";
   @apply absolute;
   @apply left-1/2;
@@ -135,24 +135,25 @@
   }
 }
 
-.list-item-done,
-.list-item-wip,
-.list-item-undone {
-  @apply relative;
+.list-done span,
+.list-wip span,
+.list-not-done span {
+  @apply mb-4;
 }
 
-.list-item-done:before {
+.list-done a:nth-child(n):before,
+.list-done li:nth-child(n):before {
   content: "✅";
   @apply mr-2;
 }
 
-.list-item-wip:before {
+.list-wip a:nth-child(n):before {
   content: "🚧";
   @apply mr-2;
   @apply h-full;
 }
 
-.list-item-undone:before {
+.list-not-done a:nth-child(n):before {
   content: "❌";
   @apply mr-2;
 }

@@ -21993,13 +21993,13 @@ video {
   width: 100%;
 }
 
-.undone {
+.not-done {
   --bg-opacity: 1;
   background-color: #fc8181;
   background-color: rgba(252, 129, 129, var(--bg-opacity));
 }
 
-.undone:hover {
+.not-done:hover {
   --bg-opacity: 1;
   background-color: #feb2b2;
   background-color: rgba(254, 178, 178, var(--bg-opacity));
@@ -22017,7 +22017,7 @@ video {
   background-color: rgba(250, 240, 137, var(--bg-opacity));
 }
 
-.undone:after {
+.not-done:after {
   content: "❌";
   position: absolute;
   left: 50%;
@@ -22106,6 +22106,45 @@ video {
 
   to {
     transform: rotate(180deg);
+  }
+}
+
+.list-done span,
+.list-wip span,
+.list-not-done span {
+  margin-bottom: 1rem;
+}
+
+.list-done a:nth-child(n):before,
+.list-done li:nth-child(n):before {
+  content: "✅";
+  margin-right: 0.5rem;
+}
+
+.list-wip a:nth-child(n):before {
+  content: "🚧";
+  margin-right: 0.5rem;
+  height: 100%;
+}
+
+.list-not-done a:nth-child(n):before {
+  content: "❌";
+  margin-right: 0.5rem;
+}
+
+.fade-bottom {
+  animation: fadeBottom 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeBottom {
+  from {
+    bottom: -50%;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
   }
 }
 
