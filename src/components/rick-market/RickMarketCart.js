@@ -1,10 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import RickMarketCartItem from "./RickMarketCartItem";
 import { Link } from "react-router-dom";
 
 function RickMarketCart() {
-  const dispatch = useDispatch();
   const { rickMarketCart } = useSelector((state) => state);
   return (
     <section className="bg-gray-100 px-4 py-8 mt-24 pt-16">
