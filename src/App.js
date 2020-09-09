@@ -59,6 +59,23 @@ function App() {
                 <span>Weather App</span>
               </LinkButton>
             </div>
+            <footer className="mt-8">
+              <p className="text-center text-2xl text-blue-500">
+                Made with{" "}
+                <span role="img" aria-label="heart icon">
+                  ❤️
+                </span>{" "}
+                by{" "}
+                <a
+                  href="https://www.malt.fr/profile/remypottier"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  Rémy Pottier
+                </a>
+              </p>
+            </footer>
           </div>
         </Route>
         <Route path="/counter">
