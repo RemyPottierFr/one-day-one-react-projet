@@ -61,6 +61,9 @@ function App() {
               <LinkButton to="/wip" className="panel not-done">
                 <span>Add linter and formatter</span>
               </LinkButton>
+              <LinkButton to="/wip" className="panel not-done">
+                <span>Not done page (≠ wip)</span>
+              </LinkButton>
             </div>
             <footer className="mt-8">
               <p className="text-center text-2xl text-blue-500">
@@ -130,6 +133,9 @@ function App() {
           <WeatherApp />
         </Route>
         <Route path="/wip">
+          <Wip />
+        </Route>
+        <Route path="/not-done">
           <Wip />
         </Route>
         <Route path="/netlify-deployement">
