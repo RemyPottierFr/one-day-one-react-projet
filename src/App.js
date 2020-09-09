@@ -103,6 +103,10 @@ function App() {
           <Wip />
         </Route>
         <Route path="/weather">
+          <LinkButton to="/" className="absolute left-4 top-4 z-1">
+            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+            Go to home
+          </LinkButton>
           <WeatherApp />
         </Route>
         <Route path="/wip">

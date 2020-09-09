@@ -3,6 +3,7 @@ import * as counterActions from "./counterActions";
 import * as todoActions from "./todoActions";
 import * as errorActions from "./errorActions";
 import * as rickMarketActions from "./rickMarketActions";
+import * as weatherAppActions from "./weatherAppActions";
 
 export {
   ajaxActions,
@@ -10,4 +11,5 @@ export {
   todoActions,
   errorActions,
   rickMarketActions,
+  weatherAppActions,
 };

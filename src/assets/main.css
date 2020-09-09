@@ -22305,6 +22305,24 @@ video {
   }
 }
 
+.float {
+  animation: float 5s ease-in-out forwards infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
