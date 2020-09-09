@@ -52,11 +52,14 @@ function App() {
               <LinkButton to="/netlify-deployement" className="panel done">
                 <span>Netlify deployement</span>
               </LinkButton>
+              <LinkButton to="/wip" className="panel wip">
+                <span>Weather App</span>
+              </LinkButton>
               <LinkButton to="/calculator" className="panel not-done">
                 <span>Calculator</span>
               </LinkButton>
-              <LinkButton to="/wip" className="panel wip">
-                <span>Weather App</span>
+              <LinkButton to="/wip" className="panel not-done">
+                <span>Add linter and formatter</span>
               </LinkButton>
             </div>
             <footer className="mt-8">
@@ -135,6 +138,12 @@ function App() {
             Go to home
           </LinkButton>
           <NetlifyDeployment />
+        </Route>
+        <Route path="/linter-formatter-article">
+          <LinkButton to="/" className="absolute left-4 top-4">
+            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+            Go to home
+          </LinkButton>
         </Route>
         <Route>
           <UnknownRoute />
