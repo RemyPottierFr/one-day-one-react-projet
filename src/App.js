@@ -13,6 +13,7 @@ import RickMarket, {
 import UnknownRoute from "./components/unknown-route";
 import Wip from "./components/wip";
 import NetlifyDeployment from "./components/netlify-deployement";
+import WeatherApp from "./components/weather-app";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
@@ -54,7 +55,7 @@ function App() {
               <LinkButton to="/calculator" className="panel not-done">
                 <span>Calculator</span>
               </LinkButton>
-              <LinkButton to="/weather" className="panel not-done">
+              <LinkButton to="/wip" className="panel wip">
                 <span>Weather App</span>
               </LinkButton>
             </div>
@@ -102,7 +103,7 @@ function App() {
           <Wip />
         </Route>
         <Route path="/weather">
-          <Wip />
+          <WeatherApp />
         </Route>
         <Route path="/wip">
           <Wip />
