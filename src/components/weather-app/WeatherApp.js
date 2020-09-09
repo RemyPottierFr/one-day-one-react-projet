@@ -43,13 +43,19 @@ function WeatherApp() {
       </h1>
       {weatherApp.length > 0 ? (
         <div className="text-center">
-          <div className="text-2xl float">
+          <div className="float my-8">
             {weatherApp[0].weather.current.weather[0].main === "Clouds" && (
-              <FontAwesomeIcon icon={faCloud} />
+              <FontAwesomeIcon
+                icon={faCloud}
+                className="transform scale-150 text-6xl text-gray-500"
+                ideographic="wsh"
+              />
             )}
           </div>
-          <h3>{weatherApp[0].name}</h3>
-          <span>
+          <h3 className="text-blue-500 font-semibold text-2xl">
+            {weatherApp[0].name}
+          </h3>
+          <span className="font-hairline text-blue-500 my-4">
             Today it's {weatherApp[0].weather.current.weather[0].main}
           </span>
         </div>
