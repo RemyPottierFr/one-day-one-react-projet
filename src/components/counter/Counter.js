@@ -7,7 +7,7 @@ function Counter() {
   const { counter } = useSelector((state) => state);
   const [inputIncrement, setInputIncrement] = useState(1);
   return (
-    <div className="App">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-6xl text-blue-500">{counter}</h1>
       <div className="my-2">
         <button
