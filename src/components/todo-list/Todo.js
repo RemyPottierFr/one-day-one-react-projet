@@ -44,7 +44,7 @@ function Todo({ id, show, message, deleted }) {
   };
 
   return (
-    <div className="bg-white bg-opacity-75 rounded text-xl flex flex-row justify-between items-center py-2 px-4 overflow-hidden">
+    <div className="shadow-lg hover:shadow-inner-lg bg-opacity-75 rounded text-xl flex flex-row justify-between items-center py-2 px-4 overflow-hidden">
       <input
         type="checkbox"
         checked={!show}

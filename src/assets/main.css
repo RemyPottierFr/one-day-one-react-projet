@@ -22223,11 +22223,11 @@ video {
 }
 
 .spin {
-  animation: spin 0.2s ease-in-out forwards;
+  animation: spin 0.2s ease-in-out;
 }
 
 .full-spin {
-  animation: full-spin 0.2s ease-in-out forwards;
+  animation: full-spin 0.2s ease-in-out;
 }
 
 .barrel-roll {
@@ -22262,7 +22262,7 @@ video {
   }
 
   to {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
 

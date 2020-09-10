@@ -52,7 +52,7 @@ function App() {
               <LinkButton to="/netlify-deployement" className="panel done">
                 <span>Netlify deployement</span>
               </LinkButton>
-              <LinkButton to="/wip" className="panel wip">
+              <LinkButton to="/weather" className="panel done">
                 <span>Weather App</span>
               </LinkButton>
               <LinkButton to="/calculator" className="panel not-done">

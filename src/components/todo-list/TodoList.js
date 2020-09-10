@@ -7,7 +7,7 @@ function TodoList() {
   const { todoList } = useSelector((state) => state);
 
   return (
-    <div className="w-screen min-h-screen bg-gray-200 flex flex-col p-8 font-hairline">
+    <div className="w-screen min-h-screen flex flex-col p-8 font-hairline">
       <h1 className="text-center text-3xl text-blue-500">
         Welcome on todo redux
       </h1>

@@ -40,15 +40,19 @@ function AddTodo() {
           e.preventDefault();
           createTodo();
         }}
-        className="flex items-center bg-white rounded px-4 py-2"
+        className="flex items-center shadow-lg rounded px-4 py-2"
       >
         <input
           autoFocus
           value={todo.message}
+          required
           onChange={(e) => updateMessage(e.target.value)}
           className="bg-transparent w-full text-xl text-blue-500 border-b-2 border-blue-500 focus:outline-none"
         />
-        <button type="submit" className="button">
+        <button
+          type="submit"
+          className="focus:outline-none px-3 text-3xl rounded shadow-md hover:shadow-inner-md focus:shadow-inner-lg ml-2 text-blue-500"
+        >
           +
         </button>
       </form>
