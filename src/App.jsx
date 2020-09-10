@@ -22,61 +22,61 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact>
+        <Route exact path="/">
           <div className="flex flex-col justify-center py-16 px-8 font-hairline">
             <h1 className="text-5xl text-blue-500 text-center">
               Welcome to learn-redux project
             </h1>
             <div className="grid grid-cols-2 md:grid-cols-4 col-gap-4 row-gap-4 my-8">
-              <LinkButton to="/counter" className="panel done">
+              <LinkButton className="panel done" to="/counter">
                 <span>Counter</span>
               </LinkButton>
-              <LinkButton to="/todo" className="panel done">
+              <LinkButton className="panel done" to="/todo">
                 <span>Todo List</span>
               </LinkButton>
-              <LinkButton to="/ajax" className="panel done">
+              <LinkButton className="panel done" to="/ajax">
                 <span>Ajax</span>
               </LinkButton>
-              <LinkButton to="/altermap" className="panel done">
+              <LinkButton className="panel done" to="/altermap">
                 <span>Altermap</span>
               </LinkButton>
-              <LinkButton to="/unknown" className="panel done">
+              <LinkButton className="panel done" to="/unknown">
                 <span>?</span>
               </LinkButton>
-              <LinkButton to="/rick-market" className="panel done">
+              <LinkButton className="panel done" to="/rick-market">
                 <span>Rick Market</span>
               </LinkButton>
-              <LinkButton to="/wip" className="panel done">
+              <LinkButton className="panel done" to="/wip">
                 <span>Work In Progress</span>
               </LinkButton>
-              <LinkButton to="/netlify-deployement" className="panel done">
+              <LinkButton className="panel done" to="/netlify-deployement">
                 <span>Netlify deployement</span>
               </LinkButton>
-              <LinkButton to="/weather" className="panel done">
+              <LinkButton className="panel done" to="/weather">
                 <span>Weather App</span>
               </LinkButton>
-              <LinkButton to="/calculator" className="panel not-done">
-                <span>Calculator</span>
-              </LinkButton>
-              <LinkButton to="/wip" className="panel wip">
+              <LinkButton className="panel wip" to="/linter-formatter-article">
                 <span>Add linter and formatter</span>
               </LinkButton>
-              <LinkButton to="/wip" className="panel not-done">
+              <LinkButton className="panel not-done" to="/calculator">
+                <span>Calculator</span>
+              </LinkButton>
+              <LinkButton className="panel not-done" to="/not-done">
                 <span>Not done page (≠ wip)</span>
               </LinkButton>
             </div>
             <footer className="mt-8">
               <p className="text-center text-2xl text-blue-500">
                 Made with{" "}
-                <span role="img" aria-label="heart icon">
+                <span aria-label="heart icon" role="img">
                   ❤️
                 </span>{" "}
                 by{" "}
                 <a
-                  href="https://www.malt.fr/profile/remypottier"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="underline"
+                  href="https://www.malt.fr/profile/remypottier"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Rémy Pottier
                 </a>
@@ -85,35 +85,35 @@ function App() {
           </div>
         </Route>
         <Route path="/counter">
-          <LinkButton to="/" className="absolute left-4 top-4">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
           <Counter />
         </Route>
         <Route path="/todo">
-          <LinkButton to="/" className="absolute left-4 top-4">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
           <TodoList />
         </Route>
         <Route path="/ajax">
-          <LinkButton to="/" className="absolute left-4 top-4">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
           <AjaxList />
         </Route>
         <Route path="/altermap">
-          <LinkButton to="/" className="absolute left-4 top-4 z-1">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4 z-1" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
           <Altermap />
         </Route>
         <Route path="/rick-market">
-          <Route path="/rick-market" exact>
+          <Route exact path="/rick-market">
             <RickMarket />
           </Route>
           <Route path="/rick-market/cart">
@@ -126,8 +126,8 @@ function App() {
           <Wip />
         </Route>
         <Route path="/weather">
-          <LinkButton to="/" className="absolute left-4 top-4 z-1">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4 z-1" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
           <WeatherApp />
@@ -139,17 +139,18 @@ function App() {
           <Wip />
         </Route>
         <Route path="/netlify-deployement">
-          <LinkButton to="/" className="absolute left-4 top-4">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
           <NetlifyDeployment />
         </Route>
         <Route path="/linter-formatter-article">
-          <LinkButton to="/" className="absolute left-4 top-4">
-            <FontAwesomeIcon icon={faAngleDoubleLeft} className="mx-2" />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
+          <Wip />
         </Route>
         <Route>
           <UnknownRoute />
