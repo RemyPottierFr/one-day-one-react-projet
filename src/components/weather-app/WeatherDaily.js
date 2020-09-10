@@ -62,6 +62,7 @@ function WeatherDaily() {
                       />
                     )}
                     <span className="text-blue-500 ml-2 text-lg">
+                      {new Date(day.dt * 1000).getDate()}{" "}
                       {days[new Date(day.dt * 1000).getDay()]}
                     </span>
                   </div>
@@ -78,7 +79,7 @@ function WeatherDaily() {
         </>
       )}
       {page === "details" && (
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start py-4 px-2">
           <button
             className="text-blue-500 text-xl"
             onClick={() => {
