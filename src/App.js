@@ -58,7 +58,7 @@ function App() {
               <LinkButton to="/calculator" className="panel not-done">
                 <span>Calculator</span>
               </LinkButton>
-              <LinkButton to="/wip" className="panel not-done">
+              <LinkButton to="/wip" className="panel wip">
                 <span>Add linter and formatter</span>
               </LinkButton>
               <LinkButton to="/wip" className="panel not-done">
