@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { weatherAppActions, errorActions } from "../../actions";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faCloud } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faCloud, faSun } from "@fortawesome/free-solid-svg-icons";
+import WeatherHourly from "./WeatherHourly";
+import WeatherDaily from "./WeatherDaily";
 
 function WeatherApp() {
   const dispatch = useDispatch();
@@ -36,8 +38,12 @@ function WeatherApp() {
     !localized && dispatch(weatherAppActions.oneCallApi(coords));
   }, [dispatch, coords, localized]);
 
+  useEffect(() => {
+    console.log(weatherApp);
+  }, [weatherApp]);
+
   return (
-    <section className="w-full md:w-10/12 lg:8/12 mx-auto mt-24 py-16">
+    <section className="w-full md:w-10/12 lg:8/12 mx-auto my-12 py-16">
       <h1 className="text-3xl text-blue-500 font-hairline text-center">
         Welcome on Rick Weather App !
       </h1>
@@ -48,19 +54,28 @@ function WeatherApp() {
               <FontAwesomeIcon
                 icon={faCloud}
                 className="transform scale-150 text-6xl text-gray-500"
-                ideographic="wsh"
+              />
+            )}
+            {weatherApp[0].weather.current.weather[0].main === "Clear" && (
+              <FontAwesomeIcon
+                icon={faSun}
+                className="transform scale-150 text-6xl text-yellow-500"
               />
             )}
           </div>
           <h3 className="text-blue-500 font-semibold text-2xl">
             {weatherApp[0].name}
           </h3>
-          <span className="font-hairline text-blue-500 my-4">
-            Today it's {weatherApp[0].weather.current.weather[0].main}
+          <span className="font-hairline text-blue-500 my-4 text-xl">
+            {Math.round(weatherApp[0].weather.current.temp)}°C
           </span>
+          <WeatherHourly />
+          <WeatherDaily />
         </div>
       ) : (
-        <div>No data</div>
+        <div className="text-center my-8 text-blue-700 text-2xl">
+          Loading ...
+        </div>
       )}
       {errors.map((error) => {
         setTimeout(() => {
