@@ -66,6 +66,15 @@ function App() {
               <LinkButton className="panel not-done" to="/calculator">
                 <span>Calculator</span>
               </LinkButton>
+              <LinkButton className="panel not-done" to="/husky-setup">
+                <span>Setup Husky for git</span>
+              </LinkButton>
+              <LinkButton className="panel not-done" to="/customer-dash">
+                <span>Customer dashboard</span>
+              </LinkButton>
+              <LinkButton className="panel not-done" to="/github-profile">
+                <span>GitHub profile</span>
+              </LinkButton>
             </div>
           </div>
         </Route>
@@ -136,6 +145,15 @@ function App() {
             Go to home
           </LinkButton>
           <EslintPrettierArticle />
+        </Route>
+        <Route path="/husky-setup">
+          <NotDone />
+        </Route>
+        <Route path="/customer-dash">
+          <NotDone />
+        </Route>
+        <Route path="/github-profile">
+          <NotDone />
         </Route>
         <Route>
           <UnknownRoute />

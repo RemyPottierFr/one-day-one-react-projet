@@ -57,6 +57,7 @@ function NetlifyDeployment() {
               Create a simple weather app
             </Link>
             <Link to="/linter-formatter-article">Add ESlint and prettier</Link>
+            <Link to="/not-done">Create Not Done page</Link>
           </div>
 
           {/* Wip projects */}
@@ -78,8 +79,10 @@ function NetlifyDeployment() {
               Not Done
             </span>
             <Link to="/calculator">Do a calculator</Link>
-            <Link to="/not-done">Create Not Done page</Link>
-            <Link to="/wip">Some more things !</Link>
+            <Link to="/husky-setup">Husky for git</Link>
+            <Link to="/customer-dash">Customer dashboard</Link>
+            <Link to="/cgithub-profile">GitHub profile</Link>
+            <Link to="/not-done">Some more things !</Link>
           </div>
         </div>
       </div>
