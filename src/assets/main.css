@@ -22184,7 +22184,6 @@ video {
 .not-done:after {
   content: "❌";
   position: absolute;
-  left: 50%;
   bottom: 1rem;
   --transform-translate-x: 0;
   --transform-translate-y: 0;
@@ -22194,6 +22193,7 @@ video {
   --transform-scale-x: 1;
   --transform-scale-y: 1;
   transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  left: 50%;
   --transform-translate-x: -50%;
 }
 
@@ -22215,7 +22215,6 @@ video {
 .done:after {
   content: "✅";
   position: absolute;
-  left: 50%;
   bottom: 1rem;
   --transform-translate-x: 0;
   --transform-translate-y: 0;
@@ -22225,13 +22224,13 @@ video {
   --transform-scale-x: 1;
   --transform-scale-y: 1;
   transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  left: 50%;
   --transform-translate-x: -50%;
 }
 
 .wip:after {
   content: "🚧";
   position: absolute;
-  left: 50%;
   bottom: 1rem;
   --transform-translate-x: 0;
   --transform-translate-y: 0;
@@ -22241,6 +22240,7 @@ video {
   --transform-scale-x: 1;
   --transform-scale-y: 1;
   transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  left: 50%;
   --transform-translate-x: -50%;
 }
 
@@ -22343,6 +22343,106 @@ video {
   100% {
     transform: translateY(0);
   }
+}
+
+.citation {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  text-align: center;
+  --text-opacity: 1;
+  color: #2b6cb0;
+  color: rgba(43, 108, 176, var(--text-opacity));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.citation > span {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.citation > span:before {
+  content: "“";
+  position: absolute;
+  left: -2rem;
+  top: -2rem;
+  font-size: 4rem;
+  opacity: 0.25;
+}
+
+.citation > span:after {
+  content: "”";
+  position: absolute;
+  right: -2rem;
+  bottom: -4rem;
+  font-size: 4rem;
+  opacity: 0.25;
+}
+
+.citation > p {
+  font-size: 1.125rem;
+  --text-opacity: 1;
+  color: #63b3ed;
+  color: rgba(99, 179, 237, var(--text-opacity));
+  margin-top: 0.5rem;
+}
+
+.citation > p:before {
+  content: "- ";
+}
+
+.citation > p:after {
+  content: " -";
+}
+
+.code-block {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 100%;
+  width: auto;
+  overflow-x: scroll;
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #2b6cb0;
+  background-color: rgba(43, 108, 176, var(--bg-opacity));
+  position: relative;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  cursor: pointer;
+}
+
+.code-block ~ span {
+  position: absolute;
+  right: 0.5rem;
+  --transform-translate-x: 0;
+  --transform-translate-y: 0;
+  --transform-rotate: 0;
+  --transform-skew-x: 0;
+  --transform-skew-y: 0;
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 0.25rem;
+  z-index: 1;
+  border-width: 1px;
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  --border-opacity: 1;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, var(--border-opacity));
+  --transform-translate-y: -50%;
+  top: 50%;
 }
 
 @media (min-width: 640px) {

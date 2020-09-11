@@ -78,9 +78,9 @@
 .not-done:after {
   content: "❌";
   @apply absolute;
-  @apply left-1/2;
   @apply bottom-4;
   @apply transform;
+  @apply left-1/2;
   @apply -translate-x-1/2;
 }
 
@@ -95,17 +95,18 @@
 .done:after {
   content: "✅";
   @apply absolute;
-  @apply left-1/2;
   @apply bottom-4;
   @apply transform;
+  @apply left-1/2;
   @apply -translate-x-1/2;
 }
+
 .wip:after {
   content: "🚧";
   @apply absolute;
-  @apply left-1/2;
   @apply bottom-4;
   @apply transform;
+  @apply left-1/2;
   @apply -translate-x-1/2;
 }
 
@@ -202,4 +203,79 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.citation {
+  @apply relative;
+  @apply my-4;
+  @apply text-3xl;
+  @apply text-center;
+  @apply text-blue-700;
+  @apply mx-auto;
+}
+
+.citation > span {
+  @apply relative;
+  @apply p-0;
+  @apply m-0;
+}
+
+.citation > span:before {
+  content: "“";
+  @apply absolute;
+  @apply -left-8;
+  @apply -top-8;
+  @apply text-6xl;
+  @apply opacity-25;
+}
+.citation > span:after {
+  content: "”";
+  @apply absolute;
+  @apply -right-8;
+  @apply -bottom-16;
+  @apply text-6xl;
+  @apply opacity-25;
+}
+
+.citation > p {
+  @apply text-lg;
+  @apply text-blue-400;
+  @apply mt-2;
+}
+
+.citation > p:before {
+  content: "- ";
+}
+
+.citation > p:after {
+  content: " -";
+}
+
+.code-block {
+  @apply px-4;
+  @apply py-2;
+  @apply rounded;
+  @apply shadow-md;
+  @apply max-w-full;
+  @apply w-auto;
+  @apply overflow-x-scroll;
+  @apply text-white;
+  @apply bg-blue-700;
+  @apply relative;
+  @apply font-mono;
+  @apply cursor-pointer;
+}
+
+.code-block ~ span {
+  @apply absolute;
+  @apply right-2;
+  @apply transform;
+  @apply px-1;
+  @apply rounded;
+  @apply z-1;
+  @apply border;
+  @apply text-white;
+  @apply border-white;
+  @apply -translate-y-1/2;
+  @apply top-1/2;
 }

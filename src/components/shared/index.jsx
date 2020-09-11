@@ -1,3 +1,4 @@
 import LinkButton from "./LinkButton";
+import CodeSnippet from "./CodeSnippet";
 
-export { LinkButton };
+export { LinkButton, CodeSnippet };

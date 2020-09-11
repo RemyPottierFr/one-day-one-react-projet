@@ -56,6 +56,7 @@ function NetlifyDeployment() {
             <Link className="list-item-done" to="/weather">
               Create a simple weather app
             </Link>
+            <Link to="/linter-formatter-article">Add ESlint and prettier</Link>
           </div>
 
           {/* Wip projects */}
@@ -66,8 +67,7 @@ function NetlifyDeployment() {
               </span>{" "}
               Work In Progress
             </span>
-            {/* <p className="text-center">I finish everythings today !</p> */}
-            <Link to="/linter-formatter-article">Add ESlint and prettier</Link>
+            <p className="text-center">I finish everythings today !</p>
           </div>
           {/* Not Done projets */}
           <div className="list-not-done flex flex-col leading-8">

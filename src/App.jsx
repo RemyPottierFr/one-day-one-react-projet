@@ -14,6 +14,7 @@ import UnknownRoute from "./components/unknown-route";
 import Wip from "./components/wip";
 import NetlifyDeployment from "./components/netlify-deployement";
 import WeatherApp from "./components/weather-app";
+import EslintPrettierArticle from "./components/eslint-prettier-article/EslintPrettierArticle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
@@ -55,7 +56,7 @@ function App() {
               <LinkButton className="panel done" to="/weather">
                 <span>Weather App</span>
               </LinkButton>
-              <LinkButton className="panel wip" to="/linter-formatter-article">
+              <LinkButton className="panel done" to="/linter-formatter-article">
                 <span>Add linter and formatter</span>
               </LinkButton>
               <LinkButton className="panel not-done" to="/calculator">
@@ -65,23 +66,6 @@ function App() {
                 <span>Not done page (≠ wip)</span>
               </LinkButton>
             </div>
-            <footer className="mt-8">
-              <p className="text-center text-2xl text-blue-500">
-                Made with{" "}
-                <span aria-label="heart icon" role="img">
-                  ❤️
-                </span>{" "}
-                by{" "}
-                <a
-                  className="underline"
-                  href="https://www.malt.fr/profile/remypottier"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Rémy Pottier
-                </a>
-              </p>
-            </footer>
           </div>
         </Route>
         <Route path="/counter">
@@ -150,12 +134,29 @@ function App() {
             <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
             Go to home
           </LinkButton>
-          <Wip />
+          <EslintPrettierArticle />
         </Route>
         <Route>
           <UnknownRoute />
         </Route>
       </Switch>
+      <footer className="my-8">
+        <p className="text-center text-2xl text-blue-500">
+          Made with{" "}
+          <span aria-label="heart icon" role="img">
+            ❤️
+          </span>{" "}
+          by{" "}
+          <a
+            className="underline"
+            href="https://www.malt.fr/profile/remypottier"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Rémy Pottier
+          </a>
+        </p>
+      </footer>
     </Router>
   );
 }
