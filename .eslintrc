@@ -18,5 +18,9 @@
       "flowVersion": "0.53"
     }
   },
+  "rules": {
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0
+  },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

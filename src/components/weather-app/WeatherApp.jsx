@@ -31,7 +31,7 @@ function WeatherApp() {
           });
           setLocalized(true);
         },
-        (error) => {
+        () => {
           dispatch(errorActions.create("GEO_DENIED"));
         }
       );
@@ -43,61 +43,61 @@ function WeatherApp() {
   }, [weatherApp]);
 
   return (
-      <section className="w-full md:w-10/12 lg:8/12 mx-auto my-12 py-16">
-          <h1 className="text-3xl text-blue-500 font-hairline text-center">
-              Welcome on Rick Weather App !
-          </h1>
-          {weatherApp.length > 0 ? (
-              <div className="text-center">
-                  <div className="float my-8">
-                      {weatherApp[0].weather.current.weather[0].main === "Clouds" && (
-                      <FontAwesomeIcon
-                          className="transform scale-150 text-6xl text-gray-500"
-                          icon={faCloud}
-                      />
+    <section className="w-full md:w-10/12 lg:8/12 mx-auto my-12 py-16">
+      <h1 className="text-3xl text-blue-500 font-hairline text-center">
+        Welcome on Rick Weather App !
+      </h1>
+      {weatherApp.length > 0 ? (
+        <div className="text-center">
+          <div className="float my-8">
+            {weatherApp[0].weather.current.weather[0].main === "Clouds" && (
+              <FontAwesomeIcon
+                className="transform scale-150 text-6xl text-gray-500"
+                icon={faCloud}
+              />
             )}
-                      {weatherApp[0].weather.current.weather[0].main === "Clear" && (
-                      <FontAwesomeIcon
-                          className="transform scale-150 text-6xl text-yellow-500"
-                          icon={faSun}
-                      />
+            {weatherApp[0].weather.current.weather[0].main === "Clear" && (
+              <FontAwesomeIcon
+                className="transform scale-150 text-6xl text-yellow-500"
+                icon={faSun}
+              />
             )}
-                  </div>
-                  <h3 className="text-blue-500 font-semibold text-2xl">
-                      {weatherApp[0].name}
-                  </h3>
-                  <span className="font-hairline text-blue-500 my-4 text-xl">
-                      {Math.round(weatherApp[0].weather.current.temp)}
-                      °C
-                  </span>
-                  <WeatherHourly />
-                  <WeatherDaily />
-              </div>
-      ) : (
-          <div className="text-center my-8 text-blue-700 text-2xl">
-              Loading ...
           </div>
+          <h3 className="text-blue-500 font-semibold text-2xl">
+            {weatherApp[0].name}
+          </h3>
+          <span className="font-hairline text-blue-500 my-4 text-xl">
+            {Math.round(weatherApp[0].weather.current.temp)}
+            °C
+          </span>
+          <WeatherHourly />
+          <WeatherDaily />
+        </div>
+      ) : (
+        <div className="text-center my-8 text-blue-700 text-2xl">
+          Loading ...
+        </div>
       )}
-          {errors.map((error) => {
+      {errors.map((error) => {
         setTimeout(() => {
           dispatch(errorActions.reset());
         }, 3000);
         return (
-            <div
-                className="z-10 absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-75 rounded text-xl text-blue-500 px-4 py-2"
-                key={error}
+          <div
+            className="z-10 absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-75 rounded text-xl text-blue-500 px-4 py-2"
+            key={error}
+          >
+            {error.message}
+            <button
+              className="text-red-500 text-xl ml-2"
+              onClick={() => dispatch(errorActions.reset())}
             >
-                {error.message}
-                <button
-                    className="text-red-500 text-xl ml-2"
-                    onClick={() => dispatch(errorActions.reset())}
-                >
-                    <FontAwesomeIcon icon={faTimes} />
-                </button>
-            </div>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+          </div>
         );
       })}
-      </section>
+    </section>
   );
 }
 
