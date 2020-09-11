@@ -18,6 +18,7 @@ import EslintPrettierArticle from "./components/eslint-prettier-article/EslintPr
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
+import NotDone from "./components/not-done";
 
 function App() {
   return (
@@ -59,11 +60,11 @@ function App() {
               <LinkButton className="panel done" to="/linter-formatter-article">
                 <span>Add linter and formatter</span>
               </LinkButton>
+              <LinkButton className="panel done" to="/not-done">
+                <span>Not done page (≠ wip)</span>
+              </LinkButton>
               <LinkButton className="panel not-done" to="/calculator">
                 <span>Calculator</span>
-              </LinkButton>
-              <LinkButton className="panel not-done" to="/not-done">
-                <span>Not done page (≠ wip)</span>
               </LinkButton>
             </div>
           </div>
@@ -107,7 +108,7 @@ function App() {
           </Route>
         </Route>
         <Route path="/calculator">
-          <Wip />
+          <NotDone />
         </Route>
         <Route path="/weather">
           <LinkButton className="absolute left-4 top-4 z-1" to="/">
@@ -120,7 +121,7 @@ function App() {
           <Wip />
         </Route>
         <Route path="/not-done">
-          <Wip />
+          <NotDone />
         </Route>
         <Route path="/netlify-deployement">
           <LinkButton className="absolute left-4 top-4" to="/">
