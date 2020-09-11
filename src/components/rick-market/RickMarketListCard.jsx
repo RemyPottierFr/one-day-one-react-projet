@@ -30,44 +30,39 @@ function RickMarketListCard({ character }) {
   };
 
   return (
-      <div
-          className="flex flex-col justify-center items-center px-2 py-4 shadow-inner-lg hover:shadow-lg bg-white"
-          key={character.id}
-      >
-          <div className="w-full relative focus:outline-none px-4 lg:px-8">
-              <img
-                  alt="character avatar"
-                  className={`w-full h-auto rounded-full border-4 mb-4 relative shadow-xl ${
+    <div
+      className="flex flex-col justify-center items-center px-2 py-4 shadow-inner-lg hover:shadow-lg bg-white"
+      key={character.id}
+    >
+      <div className="w-full relative focus:outline-none px-4 lg:px-8">
+        <img
+          alt="character avatar"
+          className={`w-full h-auto rounded-full border-4 mb-4 relative shadow-xl ${
             character.status === "Dead"
               ? "border-red-600"
               : character.status === "Alive"
               ? "border-green-600"
               : "border-black"
           }`}
-                  src={character.image}
-              />
-          </div>
-          <h4 className="text-xl text-blue-500">
-              {character.name}
-          </h4>
-          <span className="text-sm text-blue-200 text-center">
-              From 
-              {' '}
-              <br />
-              {character.location.name}
-          </span>
-          <button
-              className="mt-4 mb-2 px-4 py-2 transition-all duration-500 shadow-lg hover:shadow-inner-lg rounded focus:outline-none button-cart"
-              onClick={() => addToCart(character)}
-          >
-              Only
-              {" "}
-              {character.id * character.name.length +
+          src={character.image}
+        />
+      </div>
+      <h4 className="text-xl text-blue-500">{character.name}</h4>
+      <span className="text-sm text-blue-200 text-center">
+        From <br />
+        {character.location.name}
+      </span>
+      <button
+        className="mt-4 mb-2 px-4 py-2 transition-all duration-500 shadow-lg hover:shadow-inner-lg rounded focus:outline-none button-cart"
+        onClick={() => addToCart(character)}
+      >
+        Only{" "}
+        {character.id * character.name.length +
           character.location.name.length -
           character.species.length}
-              $
-          </button>
-      </div>
+        $
+      </button>
+    </div>
   );
 }
 

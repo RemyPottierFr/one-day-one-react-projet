@@ -34,29 +34,29 @@ function AddTodo() {
   };
 
   return (
-      <div>
-          <form
-              className="flex items-center shadow-lg rounded px-4 py-2"
-              onSubmit={(e) => {
+    <div>
+      <form
+        className="flex items-center shadow-lg rounded px-4 py-2"
+        onSubmit={(e) => {
           e.preventDefault();
           createTodo();
         }}
-          >
-              <input
-                  autoFocus
-                  className="bg-transparent w-full text-xl text-blue-500 border-b-2 border-blue-500 focus:outline-none"
-                  onChange={(e) => updateMessage(e.target.value)}
-                  required
-                  value={todo.message}
-              />
-              <button
-                  className="focus:outline-none px-3 text-3xl rounded shadow-md hover:shadow-inner-md focus:shadow-inner-lg ml-2 text-blue-500"
-                  type="submit"
-              >
-                  +
-              </button>
-          </form>
-      </div>
+      >
+        <input
+          autoFocus
+          className="bg-transparent w-full text-xl text-blue-500 border-b-2 border-blue-500 focus:outline-none"
+          onChange={(e) => updateMessage(e.target.value)}
+          required
+          value={todo.message}
+        />
+        <button
+          className="focus:outline-none px-3 text-3xl rounded shadow-md hover:shadow-inner-md focus:shadow-inner-lg ml-2 text-blue-500"
+          type="submit"
+        >
+          +
+        </button>
+      </form>
+    </div>
   );
 }
 

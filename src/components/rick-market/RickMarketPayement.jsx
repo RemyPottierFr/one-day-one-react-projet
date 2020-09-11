@@ -15,12 +15,9 @@ function CheckoutForm() {
   };
 
   return (
-      <form
-          className="mt-40"
-          onSubmit={handleSubmit}
-      >
-          <CardElement
-              options={{
+    <form className="mt-40" onSubmit={handleSubmit}>
+      <CardElement
+        options={{
           iconStyle: "solid",
           style: {
             base: {
@@ -39,14 +36,11 @@ function CheckoutForm() {
             },
           },
         }}
-          />
-          <button
-              disabled={!stripe}
-              type="submit"
-          >
-              Pay
-          </button>
-      </form>
+      />
+      <button disabled={!stripe} type="submit">
+        Pay
+      </button>
+    </form>
   );
 }
 

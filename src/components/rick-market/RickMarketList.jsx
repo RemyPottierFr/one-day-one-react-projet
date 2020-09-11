@@ -12,14 +12,11 @@ function RickMarketList() {
   }, [dispatch]);
 
   return (
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:w-10/12 lg:8/12 mx-auto mt-24 py-16 col-gap-8 row-gap-8">
-          {ajaxList.map((character) => {
-        return (<RickMarketListCard
-            character={character}
-            key={character.id}
-                />);
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:w-10/12 lg:8/12 mx-auto mt-24 py-16 col-gap-8 row-gap-8">
+      {ajaxList.map((character) => {
+        return <RickMarketListCard character={character} key={character.id} />;
       })}
-      </section>
+    </section>
   );
 }
 

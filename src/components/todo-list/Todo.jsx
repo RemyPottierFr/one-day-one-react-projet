@@ -44,64 +44,64 @@ function Todo({ id, show, message, deleted }) {
   };
 
   return (
-      <div className="shadow-lg hover:shadow-inner-lg bg-opacity-75 rounded text-xl flex flex-row justify-between items-center py-2 px-4 overflow-hidden">
-          <input
-              checked={!show}
-              className="mx-2"
-              onChange={() => changeTodoVisibility(id)}
-              type="checkbox"
-          />
-          <form
-              className="flex flex-row items-center w-full relative"
-              onSubmit={(e) => {
+    <div className="shadow-lg hover:shadow-inner-lg bg-opacity-75 rounded text-xl flex flex-row justify-between items-center py-2 px-4 overflow-hidden">
+      <input
+        checked={!show}
+        className="mx-2"
+        onChange={() => changeTodoVisibility(id)}
+        type="checkbox"
+      />
+      <form
+        className="flex flex-row items-center w-full relative"
+        onSubmit={(e) => {
           e.preventDefault();
           updateMessage(id, todoMessage);
         }}
-          >
-              <input
-                  className={`w-full bg-transparent ${!show ? "line-through" : ""}`}
-                  onChange={(e) => setTodoMessage(e.target.value)}
-                  value={todoMessage}
-              />
-              {todoMessage !== message && (
-              <button
-                  className="text-green-600 absolute right-0 top-0"
-                  type="submit"
-              >
-                  <FontAwesomeIcon icon={faCheckCircle} />
-              </button>
-        )}
-          </form>
-          {!deleted ? (
-              <button
-                  className="text-red-600 flex items-center focus:outline-none"
-                  onBlur={() => setVerifyDelete(false)}
-                  onClick={() => removeTodo(id)}
-                  type="submit"
-              >
-                  <span className={!verifyDelete ? "spin" : ""}>
-                      <FontAwesomeIcon icon={faTimes} />
-                  </span>
-                  <span className={verifyDelete ? "block ml-2 fromRight" : "hidden"}>
-                      Delete
-                  </span>
-              </button>
-      ) : (
+      >
+        <input
+          className={`w-full bg-transparent ${!show ? "line-through" : ""}`}
+          onChange={(e) => setTodoMessage(e.target.value)}
+          value={todoMessage}
+        />
+        {todoMessage !== message && (
           <button
-              className="text-green-600 flex items-center focus:outline-none"
-              onBlur={() => setVerifyUndo(false)}
-              onClick={() => undoRemoveTodo(id)}
-              type="submit"
+            className="text-green-600 absolute right-0 top-0"
+            type="submit"
           >
-              <span className={!verifyUndo ? "full-spin" : ""}>
-                  <FontAwesomeIcon icon={faCheck} />
-              </span>
-              <span className={verifyUndo ? "block ml-2 fromRight" : "hidden"}>
-                  Undo
-              </span>
+            <FontAwesomeIcon icon={faCheckCircle} />
           </button>
+        )}
+      </form>
+      {!deleted ? (
+        <button
+          className="text-red-600 flex items-center focus:outline-none"
+          onBlur={() => setVerifyDelete(false)}
+          onClick={() => removeTodo(id)}
+          type="submit"
+        >
+          <span className={!verifyDelete ? "spin" : ""}>
+            <FontAwesomeIcon icon={faTimes} />
+          </span>
+          <span className={verifyDelete ? "block ml-2 fromRight" : "hidden"}>
+            Delete
+          </span>
+        </button>
+      ) : (
+        <button
+          className="text-green-600 flex items-center focus:outline-none"
+          onBlur={() => setVerifyUndo(false)}
+          onClick={() => undoRemoveTodo(id)}
+          type="submit"
+        >
+          <span className={!verifyUndo ? "full-spin" : ""}>
+            <FontAwesomeIcon icon={faCheck} />
+          </span>
+          <span className={verifyUndo ? "block ml-2 fromRight" : "hidden"}>
+            Undo
+          </span>
+        </button>
       )}
-      </div>
+    </div>
   );
 }
 

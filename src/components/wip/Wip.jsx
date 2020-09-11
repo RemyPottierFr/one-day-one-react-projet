@@ -16,35 +16,29 @@ function Wip() {
   }, [progressBar]);
 
   return (
-      <div className="flex flex-col items-center justify-center py-24 px-8">
-          <h1 className="text-6xl mb-2 text-blue-500 font-hairline">
-              Work in progress here
-          </h1>
-          <h3 className="text-lg text-blue-300 mb-8">
-              It gonna be alvailable when it's finished I promise
-          </h3>
-          <div className="w-2/5 rounded-full py-8">
-              <h5 className="text-center text-blue-500 mb-2">
-                  We're from 
-                  {' '}
-                  {100 - progressBar}
-                  % of projet finish !
-              </h5>
-              <div
-                  className="h-3 rounded-full from-blue-100 to-blue-700 bg-gradient-to-r"
-                  style={{ width: progressBar + "%" }}
-              />
-          </div>
-          <Link to="/">
-              <button className="button">
-                  <FontAwesomeIcon
-                      className="mr-2"
-                      icon={faAngleLeft}
-                  />
-                  Return to home
-              </button>
-          </Link>
+    <div className="flex flex-col items-center justify-center py-24 px-8">
+      <h1 className="text-6xl mb-2 text-blue-500 font-hairline">
+        Work in progress here
+      </h1>
+      <h3 className="text-lg text-blue-300 mb-8">
+        It gonna be alvailable when it's finished I promise
+      </h3>
+      <div className="w-2/5 rounded-full py-8">
+        <h5 className="text-center text-blue-500 mb-2">
+          We're from {100 - progressBar}% of projet finish !
+        </h5>
+        <div
+          className="h-3 rounded-full from-blue-100 to-blue-700 bg-gradient-to-r"
+          style={{ width: progressBar + "%" }}
+        />
       </div>
+      <Link to="/">
+        <button className="button">
+          <FontAwesomeIcon className="mr-2" icon={faAngleLeft} />
+          Return to home
+        </button>
+      </Link>
+    </div>
   );
 }
 

@@ -5,11 +5,11 @@ import RickMarketFooter from "./RickMarketFooter";
 
 function RickMarket() {
   return (
-      <div className="bg-gray-100">
-          <RickMarketHeader />
-          <RickMarketList />
-          <RickMarketFooter />
-      </div>
+    <div className="bg-gray-100">
+      <RickMarketHeader />
+      <RickMarketList />
+      <RickMarketFooter />
+    </div>
   );
 }
 

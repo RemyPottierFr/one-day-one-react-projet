@@ -25,79 +25,76 @@ function WeatherDaily() {
   ];
 
   return (
-      <div className="rounded shadow-lg w-3/5 mx-auto px-4 py-2 my-4">
-          {page === "resume" && (
-          <>
-              <p className="text-blue-700 tetx-2xl my-4 text-center">
-                  Forecast for 7 days
-              </p>
-              <div className="grid grid-cols-1 row-gap-4 my-4 overflow-x-scroll">
-                  {weatherApp[0].weather.daily.map((day, index) => {
+    <div className="rounded shadow-lg w-3/5 mx-auto px-4 py-2 my-4">
+      {page === "resume" && (
+        <>
+          <p className="text-blue-700 tetx-2xl my-4 text-center">
+            Forecast for 7 days
+          </p>
+          <div className="grid grid-cols-1 row-gap-4 my-4 overflow-x-scroll">
+            {weatherApp[0].weather.daily.map((day, index) => {
               return (
-                  <div
-                      className="grid grid-cols-4 col-gap-2 px-4 py-2 rounded shadow-lg hover:shadow-inner-lg"
-                      key={day.dt}
-                      onClick={() => {
+                <div
+                  className="grid grid-cols-4 col-gap-2 px-4 py-2 rounded shadow-lg hover:shadow-inner-lg"
+                  key={day.dt}
+                  onClick={() => {
                     setPage("details");
                     setSelected(index);
                   }}
-                  >
-                      <div className="flex flex-row items-center col-span-2">
-                          {day.weather[0].main === "Clouds" && (
-                          <FontAwesomeIcon
-                              className="text-3xl text-gray-500"
-                              icon={faCloud}
-                          />
+                >
+                  <div className="flex flex-row items-center col-span-2">
+                    {day.weather[0].main === "Clouds" && (
+                      <FontAwesomeIcon
+                        className="text-3xl text-gray-500"
+                        icon={faCloud}
+                      />
                     )}
-                          {day.weather[0].main === "Clear" && (
-                          <FontAwesomeIcon
-                              className="text-4xl text-yellow-500"
-                              icon={faSun}
-                          />
+                    {day.weather[0].main === "Clear" && (
+                      <FontAwesomeIcon
+                        className="text-4xl text-yellow-500"
+                        icon={faSun}
+                      />
                     )}
-                          {day.weather[0].main === "Rain" && (
-                          <FontAwesomeIcon
-                              className="text-4xl text-gray-500"
-                              icon={faCloudRain}
-                          />
+                    {day.weather[0].main === "Rain" && (
+                      <FontAwesomeIcon
+                        className="text-4xl text-gray-500"
+                        icon={faCloudRain}
+                      />
                     )}
-                          <span className="text-blue-500 ml-2 text-lg">
-                              {new Date(day.dt * 1000).getDate()}
-                              {" "}
-                              {days[new Date(day.dt * 1000).getDay()]}
-                          </span>
-                      </div>
-                      <span className="text-blue-700 text-lg">
-                          {Math.round(day.temp.max)}
-                          °C
-                      </span>
-                      <span className="text-blue-700 text-lg">
-                          {Math.round(day.temp.min)}
-                          °C
-                      </span>
+                    <span className="text-blue-500 ml-2 text-lg">
+                      {new Date(day.dt * 1000).getDate()}{" "}
+                      {days[new Date(day.dt * 1000).getDay()]}
+                    </span>
                   </div>
+                  <span className="text-blue-700 text-lg">
+                    {Math.round(day.temp.max)}
+                    °C
+                  </span>
+                  <span className="text-blue-700 text-lg">
+                    {Math.round(day.temp.min)}
+                    °C
+                  </span>
+                </div>
               );
             })}
-              </div>
-          </>
+          </div>
+        </>
       )}
-          {page === "details" && (
-          <div className="flex flex-col items-start py-4 px-2">
-              <button
-                  className="text-blue-500 text-xl"
-                  onClick={() => {
+      {page === "details" && (
+        <div className="flex flex-col items-start py-4 px-2">
+          <button
+            className="text-blue-500 text-xl"
+            onClick={() => {
               setPage("resume");
               setSelected(0);
             }}
-              >
-                  <FontAwesomeIcon icon={faAngleLeft} />
-                  {' '}
-                  Retour
-              </button>
-              <WeatherDetails day={weatherApp[0].weather.daily[selected]} />
-          </div>
+          >
+            <FontAwesomeIcon icon={faAngleLeft} /> Retour
+          </button>
+          <WeatherDetails day={weatherApp[0].weather.daily[selected]} />
+        </div>
       )}
-      </div>
+    </div>
   );
 }
 
