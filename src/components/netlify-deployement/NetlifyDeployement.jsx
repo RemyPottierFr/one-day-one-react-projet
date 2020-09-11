@@ -12,7 +12,7 @@ function NetlifyDeployment() {
       </h3>
       <p className="leading-7 text-blue-400 text-lg">
         We are the September 8 of 2020, it's day 5 of the challenge and I send
-        it to web! I'm know itsn't big projets or very powerfull site BUT it's
+        it to web! I'm know isn't big projects or very powerful site BUT it's
         the challenge!
         <br />
       </p>
@@ -86,14 +86,14 @@ function NetlifyDeployment() {
 
       <p className="mb-4 mt-8 leading-7 text-blue-400 text-lg">
         The challenge end the September 21 of 2020, because I do all of this
-        projet to be ready for my new job !
+        project to be ready for my new job !
         <br />
         I do this for pleasure more than my actual job so be kind about projects
         width !
         <br />
       </p>
       <p className="my-4 leading-7 text-blue-400 text-lg">
-        So, Netlify deployement should (is) be the central part this article !
+        So, Netlify deployment should (is) be the central part this article !
         The question is how I done that ?
         <br />
       </p>
@@ -115,7 +115,7 @@ function NetlifyDeployment() {
         </ul>
       </div>
       <p className="mt-8 text-blue-700 text-lg text-center">
-        All of website code will be availlable when challenge end I promise
+        All of website code will be available when challenge end I promise
         (contact me if i forgot !)
       </p>
     </section>

@@ -58,7 +58,7 @@ function EslintPrettierArticle() {
       </p>
       <CodeSnippet>eslint --init</CodeSnippet>
       <p className="leading-7 text-blue-400 text-lg mt-4">
-        Now Eslint is initalized with selected options (thanks to the cli on
+        Now Eslint is initialized with selected options (thanks to the cli on
         init !), so eslint can be use by scripts but isn't finished! Now start
         with Prettier. This step is pretty simple :
       </p>
@@ -87,8 +87,8 @@ main.css`}
       <p className="leading-7 text-blue-400 text-lg">
         Now we do all of the actions (normaly) all is good!
         <br />
-        So Yesterday, i start not-done page (gonna be fast) and I have more time
-        I should start calculator!
+        So Yesterday, I do not-done page (gonna be fast) and I have more time I
+        should start calculator!
       </p>
     </section>
   );
