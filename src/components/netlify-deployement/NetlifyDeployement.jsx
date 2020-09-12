@@ -58,6 +58,7 @@ function NetlifyDeployment() {
             </Link>
             <Link to="/linter-formatter-article">Add ESlint and prettier</Link>
             <Link to="/not-done">Create Not Done page</Link>
+            <Link to="/calculator">Do a calculator</Link>
           </div>
 
           {/* Wip projects */}
@@ -79,7 +80,6 @@ function NetlifyDeployment() {
               </span>{" "}
               Not Done
             </span>
-            <Link to="/calculator">Do a calculator</Link>
             <Link to="/husky-setup">Husky for git</Link>
             <Link to="/customer-dash">Customer dashboard</Link>
             <Link to="/cgithub-profile">GitHub profile</Link>

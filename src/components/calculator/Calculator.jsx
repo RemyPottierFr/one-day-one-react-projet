@@ -35,7 +35,6 @@ function Calculator() {
         setOperation((state) => state + `${event.key}`);
       }
       if (event.key === "Backspace") {
-        console.log(calculated);
         !calculated &&
           setOperation((state) =>
             state.length > 1 ? state.substring(0, state.length - 1) : "0"
