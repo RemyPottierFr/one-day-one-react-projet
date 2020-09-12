@@ -64,7 +64,7 @@ function App() {
               <LinkButton className="panel done" to="/not-done">
                 <span>Not done page (≠ wip)</span>
               </LinkButton>
-              <LinkButton className="panel done" to="/wip">
+              <LinkButton className="panel done" to="/calculator">
                 <span>Calculator</span>
               </LinkButton>
               <LinkButton className="panel not-done" to="/husky-setup">
