@@ -70,6 +70,7 @@ function NetlifyDeployment() {
             </span>
             <p className="text-center">I finish everythings today !</p>
           </div>
+
           {/* Not Done projets */}
           <div className="list-not-done flex flex-col leading-8">
             <span className="border-b border-blue-700 py-4 text-xl text-center">

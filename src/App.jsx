@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
 import NotDone from "./components/not-done";
+import Calculator from "./components/calculator";
 
 function App() {
   return (
@@ -63,7 +64,7 @@ function App() {
               <LinkButton className="panel done" to="/not-done">
                 <span>Not done page (≠ wip)</span>
               </LinkButton>
-              <LinkButton className="panel not-done" to="/calculator">
+              <LinkButton className="panel wip" to="/wip">
                 <span>Calculator</span>
               </LinkButton>
               <LinkButton className="panel not-done" to="/husky-setup">
@@ -117,7 +118,11 @@ function App() {
           </Route>
         </Route>
         <Route path="/calculator">
-          <NotDone />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
+            Go to home
+          </LinkButton>
+          <Calculator />
         </Route>
         <Route path="/weather">
           <LinkButton className="absolute left-4 top-4 z-1" to="/">
