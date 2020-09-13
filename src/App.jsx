@@ -67,7 +67,7 @@ function App() {
               <LinkButton className="panel done" to="/calculator">
                 <span>Calculator</span>
               </LinkButton>
-              <LinkButton className="panel not-done" to="/husky-setup">
+              <LinkButton className="panel wip" to="/husky-setup">
                 <span>Setup Husky for git</span>
               </LinkButton>
               <LinkButton className="panel not-done" to="/customer-dash">
@@ -152,7 +152,7 @@ function App() {
           <EslintPrettierArticle />
         </Route>
         <Route path="/husky-setup">
-          <NotDone />
+          <Wip />
         </Route>
         <Route path="/customer-dash">
           <NotDone />
