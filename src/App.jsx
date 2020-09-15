@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Counter from "./components/counter";
@@ -20,6 +20,7 @@ import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
 import NotDone from "./components/not-done";
 import Calculator from "./components/calculator";
+const Admin = React.lazy(() => import("./components/admin"));
 
 function App() {
   return (
@@ -70,7 +71,7 @@ function App() {
               <LinkButton className="panel wip" to="/husky-setup">
                 <span>Setup Husky for git</span>
               </LinkButton>
-              <LinkButton className="panel not-done" to="/customer-dash">
+              <LinkButton className="panel wip" to="/customer-dash">
                 <span>Customer dashboard</span>
               </LinkButton>
               <LinkButton className="panel not-done" to="/github-profile">
@@ -155,7 +156,9 @@ function App() {
           <Wip />
         </Route>
         <Route path="/customer-dash">
-          <NotDone />
+          <Suspense fallback={<div>Loading ...</div>}>
+            <Admin />
+          </Suspense>
         </Route>
         <Route path="/github-profile">
           <NotDone />
