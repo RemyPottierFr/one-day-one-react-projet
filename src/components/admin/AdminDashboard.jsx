@@ -24,7 +24,7 @@ function AdminDashboard() {
         history={history}
         title="My Admin"
       >
-        {/* <Resource name="users" list={ListGuesser} /> */}
+        <Resource name="users" list={ListGuesser} />
       </Admin>
     </Provider>
   );
