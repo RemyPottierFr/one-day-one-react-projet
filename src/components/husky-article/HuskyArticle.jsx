@@ -52,7 +52,7 @@ export default function HuskyArticle() {
         But now it's time for refactor !<br />
         I'm gonna implement : <br />
         <span className="mr-2" role="img" aria-label="emoji">
-          ❌
+          ✅
         </span>{" "}
         Create switch component to clear App.jsx <br />
         <span className="mr-2" role="img" aria-label="emoji">
@@ -60,11 +60,11 @@ export default function HuskyArticle() {
         </span>{" "}
         Refactor some of components <br />
         <span className="mr-2" role="img" aria-label="emoji">
-          ❌
+          ✅
         </span>{" "}
         Dark mode <br />
         <span className="mr-2" role="img" aria-label="emoji">
-          ❌
+          ✅
         </span>{" "}
         Tell me more{" "}
         <a
