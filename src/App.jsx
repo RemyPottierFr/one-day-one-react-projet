@@ -20,6 +20,7 @@ import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { LinkButton } from "./components/shared";
 import NotDone from "./components/not-done";
 import Calculator from "./components/calculator";
+import HuskyArticle from "./components/husky-article";
 const Admin = React.lazy(() => import("./components/admin"));
 
 function App() {
@@ -68,11 +69,11 @@ function App() {
               <LinkButton className="panel done" to="/calculator">
                 <span>Calculator</span>
               </LinkButton>
-              <LinkButton className="panel wip" to="/husky-setup">
+              <LinkButton className="panel done" to="/husky-setup">
                 <span>Setup Husky for git</span>
               </LinkButton>
-              <LinkButton className="panel wip" to="/customer-dash">
-                <span>Customer dashboard</span>
+              <LinkButton className="panel done" to="/customer-dash">
+                <span>Bugged dashboard</span>
               </LinkButton>
               <LinkButton className="panel not-done" to="/github-profile">
                 <span>GitHub profile</span>
@@ -153,7 +154,11 @@ function App() {
           <EslintPrettierArticle />
         </Route>
         <Route path="/husky-setup">
-          <Wip />
+          <LinkButton className="absolute left-4 top-4" to="/">
+            <FontAwesomeIcon className="mx-2" icon={faAngleDoubleLeft} />
+            Go to home
+          </LinkButton>
+          <HuskyArticle />
         </Route>
         <Route path="/customer-dash">
           <Suspense fallback={<div>Loading ...</div>}>

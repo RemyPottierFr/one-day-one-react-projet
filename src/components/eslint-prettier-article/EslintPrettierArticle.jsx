@@ -26,8 +26,8 @@ function EslintPrettierArticle() {
         <br />
       </p>
       <div className="citation">
-        <span>Write less, do more</span>
-        <p>Rich Harris, Graphics Editor at New York Times</p>
+        <span className="quoted">Write less, do more</span>
+        <p className="infos">Rich Harris, Graphics Editor at New York Times</p>
       </div>
       <p className="leading-7 text-blue-400 text-lg">
         Like Rich Harris says, we need to stay focus on our goal. I don't need a

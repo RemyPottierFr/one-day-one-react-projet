@@ -22358,13 +22358,13 @@ video {
   margin-right: auto;
 }
 
-.citation > span {
+.citation > .quoted {
   position: relative;
   padding: 0;
   margin: 0;
 }
 
-.citation > span:before {
+.citation > .quoted:before {
   content: "“";
   position: absolute;
   left: -2rem;
@@ -22373,7 +22373,7 @@ video {
   opacity: 0.25;
 }
 
-.citation > span:after {
+.citation > .quoted:after {
   content: "”";
   position: absolute;
   right: -2rem;
@@ -22382,7 +22382,7 @@ video {
   opacity: 0.25;
 }
 
-.citation > p {
+.citation > .infos {
   font-size: 1.125rem;
   --text-opacity: 1;
   color: #63b3ed;
@@ -22390,11 +22390,11 @@ video {
   margin-top: 0.5rem;
 }
 
-.citation > p:before {
+.citation > .infos:before {
   content: "- ";
 }
 
-.citation > p:after {
+.citation > .infos:after {
   content: " -";
 }
 

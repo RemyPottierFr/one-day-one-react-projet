@@ -214,13 +214,13 @@
   @apply mx-auto;
 }
 
-.citation > span {
+.citation > .quoted {
   @apply relative;
   @apply p-0;
   @apply m-0;
 }
 
-.citation > span:before {
+.citation > .quoted:before {
   content: "“";
   @apply absolute;
   @apply -left-8;
@@ -228,7 +228,7 @@
   @apply text-6xl;
   @apply opacity-25;
 }
-.citation > span:after {
+.citation > .quoted:after {
   content: "”";
   @apply absolute;
   @apply -right-8;
@@ -237,17 +237,17 @@
   @apply opacity-25;
 }
 
-.citation > p {
+.citation > .infos {
   @apply text-lg;
   @apply text-blue-400;
   @apply mt-2;
 }
 
-.citation > p:before {
+.citation > .infos:before {
   content: "- ";
 }
 
-.citation > p:after {
+.citation > .infos:after {
   content: " -";
 }
 
