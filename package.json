@@ -40,7 +40,10 @@
     "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css -w",
     "lint": "npm-run-all -c lint:*",
     "lint:eslint": "eslint 'src/**/*.{js,jsx,html}'",
-    "lint:prettier": "prettier --check src/"
+    "lint:prettier": "prettier --check src/",
+    "format": "npm-run-all -c format:*",
+    "format:eslint": "eslint --fix 'src/**/*.{js,jsx,html}'",
+    "format:prettier": "prettier --write src/"
   },
   "eslintConfig": {
     "extends": "react-app"
