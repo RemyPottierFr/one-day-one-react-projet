@@ -4,6 +4,49 @@
 
 @import "tailwindcss/utilities";
 
+:root {
+  --bg-color: #fff;
+  --blue-light: #90cdf4;
+  --blue-normal: #4299e1;
+  --blue-dark: #2b6cb0;
+  --button-bcg: #fff;
+  --button-color: #2a4365;
+}
+
+.dark-theme {
+  --bg-color: #16161b;
+  --blue-light: #4299e1;
+  --blue-normal: #2b6cb0;
+  --blue-dark: #2a4365;
+  --button-bcg: #2a4365;
+  --button-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #16161b;
+    --blue-light: #4299e1;
+    --blue-normal: #2b6cb0;
+    --blue-dark: #2a4365;
+    --button-bcg: #2a4365;
+    --button-color: #fff;
+  }
+}
+
+main {
+  background-color: var(--bg-color);
+  transition: all 1s ease;
+}
+
+.todo,
+.header {
+  background-color: var(--bg-color);
+}
+
+.rick-card {
+  background-color: var(--button-bcg);
+}
+
 .button {
   @apply transition-all;
   @apply duration-200;
@@ -11,16 +54,16 @@
   @apply px-3;
   @apply py-1;
   @apply text-xl;
-  @apply text-blue-500;
   @apply font-hairline;
   @apply mx-2;
   @apply shadow-lg;
+  background-color: var(--button-bcg);
+  color: var(--button-color);
 }
 
 .button:hover {
   @apply shadow-inner-lg;
 }
-
 .button:focus {
   @apply outline-none;
 }
@@ -50,6 +93,7 @@
 }
 
 .panel > span {
+  color: var(--bg-color);
   @apply absolute;
   @apply transform;
   @apply top-1/2;
@@ -62,14 +106,12 @@
 
 .not-done {
   @apply bg-red-500;
-  @apply text-white;
 }
 .not-done:hover {
   @apply bg-red-400;
 }
 .wip {
   @apply bg-yellow-500;
-  @apply text-white;
 }
 .wip:hover {
   @apply bg-yellow-400;
@@ -85,11 +127,10 @@
 }
 
 .done {
-  @apply bg-blue-400;
-  @apply text-white;
+  background-color: var(--blue-normal);
 }
 .done:hover {
-  @apply bg-blue-300;
+  background-color: var(--blue-light);
 }
 
 .done:after {

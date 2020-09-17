@@ -7,7 +7,7 @@ function RickMarketHeader() {
   const [burgerMenu, toggleBurgerMenu] = useState(false);
 
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 z-10 w-full">
+    <header className="header shadow-md fixed top-0 left-0 z-10 w-full">
       <div className="grid grid-cols-5 p-4 items-center w-full lg:10/12 mx-auto">
         <Link to="/rick-market">
           <img
@@ -39,13 +39,13 @@ function RickMarketHeader() {
           <div />
           <div />
           <Link className="flex justify-center" to="/rick-market/cart">
-            <button className="px-4 py-2 text-blue-700 text-2xl font-hairline rounded transition-all duration-500 shadow-lg hover:shadow-inner-lg">
+            <button className="button text-xl px-4 py-2">
               <FontAwesomeIcon className="mr-2" icon={faCartArrowDown} />
               Cart
             </button>
           </Link>
           <Link className="flex justify-center" to="/">
-            <button className="px-4 py-2 text-blue-700 text-2xl font-hairline rounded transition-all duration-500 shadow-lg hover:shadow-inner-lg">
+            <button className="button text-xl px-4 py-2">
               <FontAwesomeIcon className="mr-2" icon={faPowerOff} />
               Get-out
             </button>

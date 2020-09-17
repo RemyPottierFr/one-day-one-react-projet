@@ -7,8 +7,8 @@ function RickMarketCart() {
   const { rickMarketCart } = useSelector((state) => state);
   const [isPaid, setIsPaid] = useState(false);
   return (
-    <section className="bg-gray-100 px-4 py-8 mt-24 pt-16">
-      <div className="bg-white rounded p-4">
+    <section className="px-4 py-8 mt-24 pt-16">
+      <div className="rick-card rounded p-4">
         {rickMarketCart.length > 0 && (
           <h2 className="text-3xl my-4 text-blue-500">
             Cart of your character

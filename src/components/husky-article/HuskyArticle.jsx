@@ -70,6 +70,8 @@ export default function HuskyArticle() {
         <a
           href="https://youtu.be/ODOj2jBUKW0?t=30"
           title="I never seen this movie 🤐"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           (not the song)
         </a>

@@ -31,7 +31,7 @@ function RickMarketListCard({ character }) {
 
   return (
     <div
-      className="flex flex-col justify-center items-center px-2 py-4 shadow-inner-lg hover:shadow-lg bg-white"
+      className="flex flex-col justify-center items-center px-2 py-4 shadow-inner-lg hover:shadow-lg rick-card"
       key={character.id}
     >
       <div className="w-full relative focus:outline-none px-4 lg:px-8">
@@ -53,7 +53,7 @@ function RickMarketListCard({ character }) {
         {character.location.name}
       </span>
       <button
-        className="mt-4 mb-2 px-4 py-2 transition-all duration-500 shadow-lg hover:shadow-inner-lg rounded focus:outline-none button-cart"
+        className="mt-4 mb-2 button button-cart"
         onClick={() => addToCart(character)}
       >
         Only{" "}

@@ -22075,6 +22075,49 @@ video {
   animation: bounce 1s infinite !important;
 }
 
+:root {
+  --bg-color: #fff;
+  --blue-light: #90cdf4;
+  --blue-normal: #4299e1;
+  --blue-dark: #2b6cb0;
+  --button-bcg: #fff;
+  --button-color: #2a4365;
+}
+
+.dark-theme {
+  --bg-color: #16161b;
+  --blue-light: #4299e1;
+  --blue-normal: #2b6cb0;
+  --blue-dark: #2a4365;
+  --button-bcg: #2a4365;
+  --button-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #16161b;
+    --blue-light: #4299e1;
+    --blue-normal: #2b6cb0;
+    --blue-dark: #2a4365;
+    --button-bcg: #2a4365;
+    --button-color: #fff;
+  }
+}
+
+main {
+  background-color: var(--bg-color);
+  transition: all 1s ease;
+}
+
+.todo,
+.header {
+  background-color: var(--bg-color);
+}
+
+.rick-card {
+  background-color: var(--button-bcg);
+}
+
 .button {
   transition-property: all;
   transition-duration: 200ms;
@@ -22084,13 +22127,12 @@ video {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   font-size: 1.25rem;
-  --text-opacity: 1;
-  color: #4299e1;
-  color: rgba(66, 153, 225, var(--text-opacity));
   font-weight: 100;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: var(--button-bcg);
+  color: var(--button-color);
 }
 
 .button:hover {
@@ -22134,6 +22176,7 @@ video {
 }
 
 .panel > span {
+  color: var(--bg-color);
   position: absolute;
   --transform-translate-x: 0;
   --transform-translate-y: 0;
@@ -22155,9 +22198,6 @@ video {
   --bg-opacity: 1;
   background-color: #f56565;
   background-color: rgba(245, 101, 101, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .not-done:hover {
@@ -22170,9 +22210,6 @@ video {
   --bg-opacity: 1;
   background-color: #ecc94b;
   background-color: rgba(236, 201, 75, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .wip:hover {
@@ -22198,18 +22235,11 @@ video {
 }
 
 .done {
-  --bg-opacity: 1;
-  background-color: #63b3ed;
-  background-color: rgba(99, 179, 237, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
+  background-color: var(--blue-normal);
 }
 
 .done:hover {
-  --bg-opacity: 1;
-  background-color: #90cdf4;
-  background-color: rgba(144, 205, 244, var(--bg-opacity));
+  background-color: var(--blue-light);
 }
 
 .done:after {
